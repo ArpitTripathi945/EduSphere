@@ -1,1 +1,99 @@
-<p>courses works!</p>
+<div class="container my-5">
+  <h2 class="text-center mb-4 text-primary">Explore Courses</h2>
+
+  <div class="row mb-4">
+  <div class="col-md-8">
+    <div class="btn-group flex-wrap" role="group">
+      <button
+        *ngFor="let category of categories"
+        type="button"
+        class="btn btn-outline-primary btn-sm m-1"
+        [class.active]="selectedCategory === category"
+        (click)="onCategoryChange(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search courses..."
+      [(ngModel)]="searchText"
+      (input)="onSearchChange()"
+    />
+  </div>
+</div>
+
+  <div class="row">
+    <div *ngIf="filteredCourses.length === 0" class="col-12">
+      <div class="alert alert-warning text-center">No courses found.</div>
+    </div>
+
+    <div
+      *ngFor="let course of filteredCourses"
+      class="col-12 col-sm-6 col-lg-4 mb-4"
+    >
+      <div class="card h-100 d-flex flex-column course-card shadow-sm">
+        <img
+          [src]="course.thumbnail"
+          class="card-img-top"
+          [alt]="course.title"
+          style="height: 180px; object-fit: cover"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+          <p class="flex-grow-1">{{ course.description }}</p>
+          <p><strong>Rating:</strong> {{ course.rating }} ⭐</p>
+          <button
+            class="btn btn-outline-primary mt-auto"
+            (click)="openPreview(course)"
+            data-bs-toggle="modal"
+            data-bs-target="#videoModal"
+          >
+            Preview
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div
+    class="modal fade"
+    id="videoModal"
+    tabindex="-1"
+    aria-labelledby="videoModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="videoModalLabel">
+            {{ selectedCourse?.title }}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="stopVideo()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9">
+            <video
+              #previewVideo
+              controls
+              [src]="selectedCourse?.video"
+              class="w-100 border border-dark"
+            ></video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
