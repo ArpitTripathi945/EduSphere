@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card shadow p-4 col-md-5 bg-white">
+    <h3 class="text-center text-primary fw-bold mb-4">Create Account</h3>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="mb-2">
+        <label for="fullname" class="form-label">Full Name</label>
+        <input id="fullname" type="text" class="form-control" formControlName="fullname" />
+        <div class="invalid-feedback d-block" *ngIf="registerForm.get('fullname')?.touched && registerForm.get('fullname')?.invalid">
+          Full name is required.
+        </div>
+      </div>
+
+      <div class="mb-2">
+        <label for="email" class="form-label">Email address</label>
+        <input id="email" type="email" class="form-control" formControlName="email" />
+        <div class="invalid-feedback d-block" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+          Enter a valid Gmail address.
+        </div>
+      </div>
+
+      <div class="mb-2">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" type="password" class="form-control" formControlName="password" />
+        <div class="invalid-feedback d-block" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          Must be 8+ chars, include upper, lower, number, and special character.
+        </div>
+      </div>
+
+      <div class="mb-2">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input id="confirmPassword" type="password" class="form-control" formControlName="confirmPassword" />
+        <div class="invalid-feedback d-block" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['mismatch']">
+          Passwords do not match.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
+
+    <div class="text-center mt-3">
+      Already have an account? <a routerLink="/login">Login here</a>
+    </div>
+  </div>
+</div>
+
