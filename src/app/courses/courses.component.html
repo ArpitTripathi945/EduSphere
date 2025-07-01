@@ -2,30 +2,30 @@
   <h2 class="text-center mb-4 text-primary">Explore Courses</h2>
 
   <div class="row mb-4">
-  <div class="col-md-8">
-    <div class="btn-group flex-wrap" role="group">
-      <button
-        *ngFor="let category of categories"
-        type="button"
-        class="btn btn-outline-primary btn-sm m-1"
-        [class.active]="selectedCategory === category"
-        (click)="onCategoryChange(category)"
-      >
-        {{ category }}
-      </button>
+    <div class="col-md-8">
+      <div class="btn-group flex-wrap" role="group">
+        <button
+          *ngFor="let category of categories"
+          type="button"
+          class="btn btn-outline-primary btn-sm m-1"
+          [class.active]="selectedCategory === category"
+          (click)="onCategoryChange(category)"
+        >
+          {{ category }}
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search courses..."
+        [(ngModel)]="searchText"
+        (input)="onSearchChange()"
+      />
     </div>
   </div>
-
-  <div class="col-md-4">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Search courses..."
-      [(ngModel)]="searchText"
-      (input)="onSearchChange()"
-    />
-  </div>
-</div>
 
   <div class="row">
     <div *ngIf="filteredCourses.length === 0" class="col-12">
@@ -36,7 +36,11 @@
       *ngFor="let course of filteredCourses"
       class="col-12 col-sm-6 col-lg-4 mb-4"
     >
-      <div class="card h-100 d-flex flex-column course-card shadow-sm">
+      <div
+        class="card h-100 d-flex flex-column course-card shadow-sm"
+        style="cursor: pointer"
+         (click)="goToCourseDetail(course.id.toString())"
+      >
         <img
           [src]="course.thumbnail"
           class="card-img-top"
@@ -50,12 +54,19 @@
           <p><strong>Rating:</strong> {{ course.rating }} ⭐</p>
           <button
             class="btn btn-outline-primary mt-auto"
-            (click)="openPreview(course)"
+            (click)="openPreview(course); $event.stopPropagation()"
             data-bs-toggle="modal"
             data-bs-target="#videoModal"
           >
             Preview
           </button>
+
+          <!-- <button
+            class="btn btn-primary mb-2"
+            (click)="goToCourseDetail(course.id.toString()); $event.stopPropagation()"
+          >
+            View Details
+          </button> -->
         </div>
       </div>
     </div>

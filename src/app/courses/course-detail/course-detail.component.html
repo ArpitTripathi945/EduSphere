@@ -1,1 +1,18 @@
-<p>course-detail works!</p>
+<div class="container my-5" *ngIf="course">
+  <button routerLink="../" class="btn btn-secondary mb-3">← Back</button>
+
+  <h2>{{ course.title }}</h2>
+  <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+  <p><strong>Description:</strong> {{ course.description }}</p>
+  <p><strong>Rating:</strong> {{ course.rating }} ⭐</p>
+
+  <img [src]="course.thumbnail" class="img-fluid" alt="Thumbnail" />
+
+  <!-- <div class="ratio ratio-16x9 my-4">
+    <video
+      [src]="course.video"
+      controls
+      class="w-100 border border-dark"
+    ></video>
+  </div> -->
+</div>
