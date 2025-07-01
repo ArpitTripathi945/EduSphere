@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild  } from "@angular/core";
 import { Course } from "../models/course";
 import { CourseService } from "../services/course.service";
+import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: "app-courses",
   templateUrl: "./courses.component.html",
@@ -16,7 +17,7 @@ export class CoursesComponent implements OnInit{
 
   @ViewChild("previewVideo") previewVideo!: ElementRef<HTMLVideoElement>;
 
-  constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe((data) => {
@@ -63,5 +64,10 @@ export class CoursesComponent implements OnInit{
       video.pause();
       video.currentTime = 0;
     }
+  }
+
+
+ goToCourseDetail(id: string): void {
+    this.router.navigate([id], { relativeTo: this.route });
   }
 }
