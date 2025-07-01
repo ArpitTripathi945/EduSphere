@@ -86,24 +86,39 @@
   </div>
 </section>
 
-<div class="container my-5 position-relative">
-  <h2 class="mb-5 fw-bold text-primary position-relative text-center">
-    Top Rated Courses
-  </h2>
-  <!-- Navigation Buttons -->
-  <button class="btn btn-dark nav-btn prev-btn" onclick="prevSlide()">
-    &larr;
-  </button>
-  <button class="btn btn-dark nav-btn next-btn" onclick="nextSlide()">
-    &rarr;
-  </button>
+<div class="container my-5">
+  <h2 class="mb-5 fw-bold text-primary text-center">Top Rated Courses</h2>
 
-  <!-- Carousel -->
-  <div class="carousel-viewport">
-    <div class="carousel-track" id="carousel-track">
-      <!-- Cards injected dynamically -->
+  <div class="position-relative">
+    <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y z-3" (click)="prev()">
+      &larr;
+    </button>
+    <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y z-3" (click)="next()">
+      &rarr;
+    </button>
+
+    <div class="overflow-hidden w-100">
+      <div class="d-flex justify-content-center flex-nowrap transition-track">
+        <div
+          class="card mx-2 shadow"
+          style="min-width: 300px; max-width: 320px;"
+          *ngFor="let course of getVisibleCourses()"
+        >
+          <div class="ratio ratio-16x9">
+            <img [src]="course.thumbnail" class="img-fluid rounded object-fit-cover" [alt]="course.title" />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ course.title }}</h5>
+            <p class="card-text">{{ course.description }}</p>
+            <span class="badge bg-success">
+              <i class="bi bi-star-fill"></i> {{ course.rating }}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
 
 <div id="testimonial-section" class="container mt-5 mb-5 bg-light">
