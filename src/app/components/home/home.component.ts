@@ -11,6 +11,11 @@ import { TestimonialService } from 'src/app/services/testimonial.service';
 })
 
 export class HomeComponent implements OnInit {
+
+  testimonials: Testimonial[] = [];
+  currentIndex: number = 0;
+  currentTestimonial: Testimonial = { text: '', author: '' };
+
   courses: Course[] = [
     {
       id: 1,
@@ -44,12 +49,25 @@ export class HomeComponent implements OnInit {
     }
   ];
 
+  constructor(private testimonialService: TestimonialService) {}
+
   slideIndex: number = 0;
 
   ngOnInit(): void {
     setInterval(() => {
       this.next();
     }, 3000);
+
+    this.testimonialService.getTestimonials().subscribe(data => {
+      this.testimonials = data;
+      if (this.testimonials.length > 0) {
+        this.currentTestimonial = this.testimonials[this.currentIndex];
+        setInterval(() => {
+          this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+          this.currentTestimonial = this.testimonials[this.currentIndex];
+        }, 3000);
+      }
+    });
   }
 
   next() {
