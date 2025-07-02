@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { Course } from 'src/app/models/course';
 import { Testimonial } from 'src/app/models/testimonial';
 import { CourseService } from 'src/app/services/course.service';
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       description: 'Learn Python from scratch with hands-on examples and mini projects designed for absolute beginners.'
     },
     {
-      id: 3,
+      id: 2,
       title: 'React Mastery',
       category: 'Web Development',
       instructor: 'Alex Johnson',
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       description: 'Master React.js with hooks, components, state management, and real-world project integration.'
     },
     {
-      id: 9,
+      id: 3,
       title: 'Cloud Computing with AWS',
       category: 'Cloud',
       instructor: 'Priya Nair',
@@ -45,11 +45,27 @@ export class HomeComponent implements OnInit {
   ];
 
   slideIndex: number = 0;
+  visibleCount: number = 3;
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.next();
-    }, 3000);
+    this.updateVisibleCount();
+    setInterval(() => this.next(), 3000);
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.updateVisibleCount();
+  }
+
+  updateVisibleCount() {
+    const width = window.innerWidth;
+    if (width < 576) {
+      this.visibleCount = 1;
+    } else if (width < 992) {
+      this.visibleCount = 2;
+    } else {
+      this.visibleCount = 3;
+    }
   }
 
   next() {
@@ -62,9 +78,9 @@ export class HomeComponent implements OnInit {
 
   getVisibleCourses(): Course[] {
     const result: Course[] = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < this.visibleCount; i++) {
       result.push(this.courses[(this.slideIndex + i) % this.courses.length]);
     }
-    return result;
-  }
+    return result;
+  }
 }
