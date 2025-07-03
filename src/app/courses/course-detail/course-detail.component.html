@@ -6,7 +6,7 @@
         <div class="card-body">
           <h1 class="card-title">{{ course.title }}</h1>
           <p class="card-text mt-4">{{ course.description }}</p>
-          <p class="fs-5 card-text mt-4"><strong>Instructor: </strong>{{ course.instructor }}</p>
+          <p class="fs-5 card-text mt-4">Instructor: <strong>{{ course.instructor }}</strong></p>
           <div class="d-flex mt-4" style="gap: 85px;">
             <span class="fs-5 me-5">
              <strong>⭐ {{  course.rating }}</strong>
@@ -22,7 +22,7 @@
 
           <div class="d-flex mt-5" style = "gap: 30px;">
             <button class="btn btn-primary">Start Subscription</button>
-            <span class="fs-6 p-2">Starting at ₹ {{ course.price }}/month. Cancel anytime.</span>
+            <span class="fs-6 p-2">Starting at ₹{{ course.price }}/month. Cancel anytime.</span>
           </div>
 
           

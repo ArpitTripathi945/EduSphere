@@ -49,12 +49,12 @@
         />
         <div class="card-body">
           <div class="d-flex flex-row justify-content-between align-items-center mb-2">
-            <h5 class="card-title">{{ course.title }}</h5>
-            <h6><strong> ⭐ {{ course.rating }}</strong></h6>
+            <h5>{{ course.title }}</h5>
+            <h6 class="card-text"><strong> ⭐ {{ course.rating }}</strong></h6>
           </div>
           <div class="d-flex flex-column">
             <h6>Instructor: <strong>{{ course.instructor }}</strong></h6>
-            <h6>Starting at ₹ <strong>{{ course.price }}</strong>/month</h6>
+            <h6>Starting at ₹<strong>{{ course.price }}</strong>/month</h6>
             <button
               class="btn btn-outline-primary mt-auto"
               (click)="openPreview(course); $event.stopPropagation()"
