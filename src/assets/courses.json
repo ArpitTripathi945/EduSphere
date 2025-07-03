@@ -5,9 +5,12 @@
     "category": "Programming",
     "instructor": "John Doe",
     "rating": 4.8,
+    "price" : 999,
+    "hours" : 18.6,
+    "exercises" : 72,
     "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.3CKXZu5gEkf60AkAYP7CvQHaE8&pid=Api&P=0&h=180",
     "video": "https://videos.pexels.com/video-files/6963744/6963744-hd_1920_1080_25fps.mp4",
-    "description": "Learn Python from scratch with hands-on examples and mini projects designed for absolute beginners."
+    "description": "Learn Python from scratch with hands-on examples and mini projects designed for absolute beginners. Gain confidence in writing scripts, understanding core concepts, and building small tools that automate real-world tasks."
   },
   {
     "id": 2,
@@ -15,9 +18,12 @@
     "category": "Web Development",
     "instructor": "Jane Smith",
     "rating": 4.7,
+    "price" : 2499,
+    "hours" : 84.6,
+    "exercises" : 132,
     "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.xi_VY54V535hztHz11VTyQHaFL&pid=Api&P=0&h=180",
     "video": "https://videos.pexels.com/video-files/29458457/12680994_1920_1080_25fps.mp4",
-    "description": "A complete web development guide covering HTML, CSS, JavaScript, and backend fundamentals."
+    "description": "A complete web development guide covering HTML, CSS, JavaScript, and backend fundamentals. Learn to build responsive websites, manage databases, implement APIs, and deploy full-stack applications using modern web development practices."
   },
   {
     "id": 3,
@@ -25,9 +31,12 @@
     "category": "Web Development",
     "instructor": "Alex Johnson",
     "rating": 4.9,
+    "price" : 1499,
+    "hours" : 43.8,
+    "exercises" : 56,
     "thumbnail": "https://ict-trainings.com/blog/wp-content/uploads/2023/07/react-technology-480x270.jpg",
     "video": "https://videos.pexels.com/video-files/29315509/12638980_1920_1080_25fps.mp4",
-    "description": "Master React.js with hooks, components, state management, and real-world project integration."
+    "description": "Master React.js with a comprehensive understanding of hooks, functional and class-based components, and efficient state management techniques. Learn how to integrate real-world projects, connect APIs, and implement routing, context, and performance optimization strategies to build scalable, maintainable applications."
   },
   {
     "id": 4,
@@ -35,9 +44,12 @@
     "category": "AI & ML",
     "instructor": "Dr. Emily Brown",
     "rating": 4.6,
+    "price" : 2999,
+    "hours" : 75,
+    "exercises" : 66,
     "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.b7Sq85r8CYWSymazzuOxOgHaFP&pid=Api&P=0&h=180",
     "video": "https://videos.pexels.com/video-files/2887463/2887463-hd_1920_1080_25fps.mp4",
-    "description": "Understand the fundamentals of machine learning including supervised and unsupervised learning."
+    "description": "Understand the fundamentals of machine learning including supervised and unsupervised learning. Dive into key algorithms, practical implementations, and tools like scikit-learn to analyze data and make intelligent predictions."
   },
   {
     "id": 5,
@@ -45,9 +57,12 @@
     "category": "Design",
     "instructor": "Sara Lee",
     "rating": 4.5,
+    "price" : 1199,
+    "hours" : 21.5,
+    "exercises" : 34,
     "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.doYHfVKgVncrGIL5jmSOMgHaE8&pid=Api&P=0&h=180",
     "video": "https://videos.pexels.com/video-files/854322/854322-hd_1280_720_25fps.mp4",
-    "description": "Learn the key principles of user interface and user experience design with modern tools."
+    "description": "Learn the key principles of user interface and user experience design with modern tools. Master wireframing, prototyping, user research, and interactive design to create visually appealing and intuitive digital experiences."
   },
   {
     "id": 6,
@@ -55,9 +70,12 @@
     "category": "Programming",
     "instructor": "Michael Green",
     "rating": 4.7,
+    "price" : 2999,
+    "hours" : 64.5,
+    "exercises" : 87,
     "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.WaCOgSUgMm-RNN1PhMBPWgHaEK&pid=Api&P=0&h=180",
     "video": "https://videos.pexels.com/video-files/3141211/3141211-uhd_2560_1440_25fps.mp4",
-    "description": "Explore advanced Java programming concepts including multithreading, collections, and OOP design patterns."
+    "description": "Explore advanced Java programming concepts including multithreading, collections, and OOP design patterns. Apply these techniques to build efficient, scalable applications while reinforcing your understanding through hands-on problem-solving.    "
   },
   {
     "id": 7,
@@ -65,9 +83,12 @@
     "category": "Marketing",
     "instructor": "Nina Patel",
     "rating": 4.4,
+    "price" : 499,
+    "hours" : 15.6,
+    "exercises" : 23,
     "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.9AtYwap7v7dligcoIQo51QHaE8&pid=Api&P=0&h=180",
     "video": "https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4",
-    "description": "Get started with SEO, social media, and content marketing strategies to grow your business."
+    "description": "Get started with SEO, social media, and content marketing strategies to grow your business. Learn keyword research, analytics, audience targeting, and campaign creation to enhance visibility and digital engagement."
   },
   {
     "id": 8,
@@ -75,9 +96,12 @@
     "category": "Programming",
     "instructor": "Arjun Mehta",
     "rating": 4.6,
+    "price" : 1999,
+    "hours" : 32.5,
+    "exercises" : 58,
     "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.nGIDaf2LSKB-ZbcZ8VoLBwHaEH&pid=Api&P=0&h=180",
     "video": "https://videos.pexels.com/video-files/4990233/4990233-hd_1920_1080_30fps.mp4",
-    "description": "Learn core data structures in C++ such as arrays, stacks, queues, trees, and graphs with implementation."
+    "description": "Learn core data structures in C++ such as arrays, stacks, queues, trees, and graphs with implementation. Strengthen your problem-solving skills by coding algorithms and understanding how data is organized and processed."
   },
   {
     "id": 9,
@@ -85,9 +109,12 @@
     "category": "Cloud",
     "instructor": "Priya Nair",
     "rating": 4.8,
+    "price" : 3999,
+    "hours" : 43.8,
+    "exercises" :44,
     "thumbnail": "https://wallpaperaccess.com/full/5650215.jpg",
     "video": "https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_30fps.mp4",
-    "description": "Understand the basics of cloud computing and start using AWS services like EC2, S3, and Lambda."
+    "description": "Understand the basics of cloud computing and start using AWS services like EC2, S3, and Lambda. Get practical experience with infrastructure deployment, scalability, and cost optimization using real-world scenarios."
   },
   {
     "id": 10,
@@ -95,8 +122,11 @@
     "category": "Design",
     "instructor": "David Wilson",
     "rating": 4.3,
+    "price" : 499,
+    "hours" : 10,
+    "exercises" : 23,
     "thumbnail": "https://retouchinglabs.com/wp-content/uploads/2023/11/graphic-design-with-canva-retouchinglabs.jpg",
     "video": "https://videos.pexels.com/video-files/32522782/13868829_1920_1080_30fps.mp4",
-    "description": "Create stunning social media posts, flyers, and presentations using Canva's drag-and-drop interface."
+    "description": "Create stunning social media posts, flyers, and presentations using Canva's drag-and-drop interface. Explore design templates, typography, branding, and marketing assets to effectively communicate your ideas visually."
   }
 ]

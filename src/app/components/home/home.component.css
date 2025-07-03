@@ -13,9 +13,7 @@
   height: 150px;
   border-radius: 5px;
 }
-.transition-track {
-  transition: transform 0.5s ease-in-out;
-}
+
 /* 10% custom tweaks only */
 .object-fit-cover {
   object-fit: cover;

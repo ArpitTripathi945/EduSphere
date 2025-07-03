@@ -1,89 +1,147 @@
-import { Component, OnInit,HostListener } from '@angular/core';
-import { Course } from 'src/app/models/course';
-import { Testimonial } from 'src/app/models/testimonial';
-import { CourseService } from 'src/app/services/course.service';
-import { TestimonialService } from 'src/app/services/testimonial.service';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Course } from '../../models/course';
+import { Testimonial } from '../../models/testimonial';
+import { CourseService } from '../../services/course.service';
+import { TestimonialService } from '../../services/testimonial.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+export class HomeComponent implements OnInit, AfterViewInit {
 
-export class HomeComponent implements OnInit {
+  @ViewChild('track') trackRef!: ElementRef;
+
+  courses: Course[] = [];
+  visibleCourses: Course[] = [];
+  visibleCount: number = this.getVisibleCount();
+  startIndex: number = 0;
+  isTransitioning: boolean = false;
 
   testimonials: Testimonial[] = [];
-  currentIndex: number = 0;
-  currentTestimonial: Testimonial = { text: '', author: '' };
+  currentTestimonial: number = 0;
 
-  courses: Course[] = [
-    {
-      id: 1,
-      title: 'Python for Beginners',
-      category: 'Programming',
-      instructor: 'John Doe',
-      rating: 4.8,
-      thumbnail: 'https://tse4.mm.bing.net/th?id=OIP.3CKXZu5gEkf60AkAYP7CvQHaE8&pid=Api&P=0&h=180',
-      video: '',
-      description: 'Learn Python from scratch with hands-on examples and mini projects designed for absolute beginners.'
-    },
-    {
-      id: 2,
-      title: 'React Mastery',
-      category: 'Web Development',
-      instructor: 'Alex Johnson',
-      rating: 4.9,
-      thumbnail: 'https://ict-trainings.com/blog/wp-content/uploads/2023/07/react-technology-480x270.jpg',
-      video: '',
-      description: 'Master React.js with hooks, components, state management, and real-world project integration.'
-    },
-    {
-      id: 3,
-      title: 'Cloud Computing with AWS',
-      category: 'Cloud',
-      instructor: 'Priya Nair',
-      rating: 4.8,
-      thumbnail: 'https://wallpaperaccess.com/full/5650215.jpg',
-      video: '',
-      description: 'Understand the basics of cloud computing and start using AWS services like EC2, S3, and Lambda.'
-    }
-  ];
+  testimonialIntervalId: any;
+  slideIntervalId: any;
 
-  constructor(private testimonialService: TestimonialService) {}
+  private track!: HTMLElement;
 
-  slideIndex: number = 0;
-  visibleCount: number = 3;
+  constructor(
+    private courseService: CourseService,
+    private testimonialService: TestimonialService
+  ) {}
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.next();
-    }, 3000);
+    this.loadCourses();
+    this.loadTestimonials();
+    this.setupAutoSlide();
+  }
 
-    this.testimonialService.getTestimonials().subscribe(data => {
-      this.testimonials = data;
-      if (this.testimonials.length > 0) {
-        this.currentTestimonial = this.testimonials[this.currentIndex];
-        setInterval(() => {
-          this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
-          this.currentTestimonial = this.testimonials[this.currentIndex];
-        }, 3000);
+  ngAfterViewInit(): void {
+    this.track = this.trackRef.nativeElement as HTMLElement;
+  }
+
+  getVisibleCount(): number {
+    const w = window.innerWidth;
+    if (w >= 992) return 3;
+    if (w >= 768) return 2;
+    return 1;
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    const newVisibleCount = this.getVisibleCount();
+    if (newVisibleCount !== this.visibleCount) {
+      this.visibleCount = newVisibleCount;
+      this.updateVisibleCourses();
+    }
+  }
+
+  private loadCourses(): void {
+    this.courseService.getCourses().subscribe({
+      next: (data: Course[]) => {
+        this.courses = data;
+        this.updateVisibleCourses();
+      },
+      error: () => {
+        console.error('Failed to load courses');
       }
     });
   }
 
-  next() {
-    this.slideIndex = (this.slideIndex + 1) % this.courses.length;
+  private loadTestimonials(): void {
+    this.testimonialService.getTestimonials().subscribe({
+      next: (data: Testimonial[]) => {
+        this.testimonials = data;
+        this.testimonialIntervalId = setInterval(() => {
+          this.currentTestimonial = (this.currentTestimonial + 1) % this.testimonials.length;
+        }, 3000);
+      },
+      error: () => {
+        console.error('Failed to load testimonials');
+      }
+    });
   }
 
-  prev() {
-    this.slideIndex = (this.slideIndex - 1 + this.courses.length) % this.courses.length;
+
+  private setupAutoSlide(): void {
+    this.slideIntervalId = setInterval(() => this.nextSlide(), 2500);
   }
 
-  getVisibleCourses(): Course[] {
-    const result: Course[] = [];
+  updateVisibleCourses(): void {
+    this.visibleCourses = [];
     for (let i = 0; i < this.visibleCount; i++) {
-      result.push(this.courses[(this.slideIndex + i) % this.courses.length]);
+      const index = (this.startIndex + i) % this.courses.length;
+      this.visibleCourses.push(this.courses[index]);
     }
-    return result;
+    this.track.style.transition = "none";
+    this.track.style.transform = "translateX(0)";
+    this.track.offsetHeight;
+
+
   }
+
+  nextSlide(): void {
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+
+    const moveBy = this.track.offsetWidth / this.visibleCount;
+    const firstCard = this.track.children[0].cloneNode(true);
+    this.track.appendChild(firstCard);
+
+    this.track.style.transition = "transform 0.8s ease";
+    this.track.style.transform = `translateX(-${moveBy}px)`;
+
+    setTimeout(() => {
+      this.track.style.transition = "none";
+      this.track.removeChild(this.track.children[0]);
+      this.track.style.transform = "translateX(0)";
+      this.startIndex = (this.startIndex + 1) % this.courses.length;
+      this.isTransitioning = false;
+    }, 800);
+  }
+
+  prevSlide(): void {
+    if (this.isTransitioning) return;
+    this.isTransitioning = true;
+
+    this.startIndex = (this.startIndex - 1 + this.courses.length) % this.courses.length;
+    this.updateVisibleCourses();
+
+    const moveBy = this.track.offsetWidth / (this.visibleCount + 1);
+    this.track.style.transition = "none";
+    this.track.style.transform = `translateX(-${moveBy}px)`;
+
+    setTimeout(() => {
+      this.track.style.transition = "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+      this.track.style.transform = "translateX(0)";
+    }, 50);
+
+    setTimeout(() => {
+      this.isTransitioning = false;
+    }, 850);
+  }
+
+
 }

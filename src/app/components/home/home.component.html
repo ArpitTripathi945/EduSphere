@@ -94,23 +94,23 @@
     <div class="position-relative">
       <button
         class="btn btn-dark position-absolute top-50 start-0 translate-middle-y z-3"
-        (click)="prev()"
+        (click)="prevSlide()"
       >
         &larr;
       </button>
       <button
         class="btn btn-dark position-absolute top-50 end-0 translate-middle-y z-3"
-        (click)="next()"
+        (click)="nextSlide()"
       >
         &rarr;
       </button>
 
-      <div class="overflow-hidden w-100">
-        <div class="d-flex justify-content-center flex-nowrap transition-track">
+      <div class="overflow-hidden w-10" *ngIf="visibleCourses.length">
+        <div class="d-flex justify-content-center flex-nowrap transition-track" #track>
           <div
             class="card mx-2 shadow"
-            style="min-width: 300px; max-width: 320px"
-            *ngFor="let course of getVisibleCourses()"
+            style="min-width: 400px; max-width: 420px"
+            *ngFor="let course of visibleCourses"
           >
             <div class="ratio ratio-16x9">
               <img
@@ -137,7 +137,8 @@
 <div id="testimonial-section" class="container mt-5 mb-5">
   <h2 class="mb-5 fw-bold text-primary text-center">What Our Students Say</h2>
   <div class="testimonial-slider bg-white p-4 rounded shadow text-center">
-    <p id="testimonial-text" class="mb-2">{{ currentTestimonial.text }}</p>
-    <h6 id="testimonial-author">{{ currentTestimonial.author }}</h6>
+    <p id="testimonial-text" class="mb-2">{{ testimonials[currentTestimonial].text }}</p>
+    <h6 id="testimonial-author">{{ testimonials[currentTestimonial].author }}</h6>
   </div>
 </div>
+
