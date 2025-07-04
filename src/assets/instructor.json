@@ -9,11 +9,7 @@
       "rating": 4.8,
       "totalReviews": 1200,
       "totalCourses": 12,
-      "specializations": ["Machine Learning", "Deep Learning", "Python"],
-      "socialLinks": {
-        "linkedin": "https://linkedin.com/in/anjalimehra",
-        "twitter": "https://twitter.com/anjalimehra"
-      }
+      "specializations": ["Machine Learning", "Deep Learning", "Python"]
     },
     {
       "id": 2,
@@ -25,10 +21,7 @@
       "rating": 4.6,
       "totalReviews": 870,
       "totalCourses": 8,
-      "specializations": ["Blockchain", "Distributed Systems", "Java"],
-      "socialLinks": {
-        "linkedin": "https://linkedin.com/in/rohankapoor"
-      }
+      "specializations": ["Blockchain", "Distributed Systems", "Java"]
     },
     {
       "id": 3,
@@ -40,11 +33,8 @@
       "rating": 4.9,
       "totalReviews": 1540,
       "totalCourses": 10,
-      "specializations": ["Angular", "React", "UI/UX"],
-      "socialLinks": {
-        "linkedin": "https://linkedin.com/in/sarawilliams",
-        "twitter": "https://twitter.com/saracodes"
-      }
+      "specializations": ["Angular", "React", "UI/UX"]
+
     },
     {
       "id": 4,
@@ -56,10 +46,7 @@
       "rating": 4.7,
       "totalReviews": 980,
       "totalCourses": 7,
-      "specializations": ["DevOps", "AWS", "Kubernetes"],
-      "socialLinks": {
-        "linkedin": "https://linkedin.com/in/kunalsharma"
-      }
+      "specializations": ["DevOps", "AWS", "Kubernetes"]
     },
     {
       "id": 5,
@@ -71,10 +58,7 @@
       "rating": 4.85,
       "totalReviews": 1120,
       "totalCourses": 9,
-      "specializations": ["Node.js", "MongoDB", "TypeScript"],
-      "socialLinks": {
-        "linkedin": "https://linkedin.com/in/emilyzhang"
-      }
+      "specializations": ["Node.js", "MongoDB", "TypeScript"]
     },
     {
       "id": 6,
@@ -86,9 +70,59 @@
       "rating": 4.95,
       "totalReviews": 1900,
       "totalCourses": 15,
-      "specializations": ["AI", "Reinforcement Learning", "Neural Networks"],
-      "socialLinks": {
-        "linkedin": "https://linkedin.com/in/naveenjoshi"
+      "specializations": ["AI", "Reinforcement Learning", "Neural Networks"]
+    },
+    {
+        "id": 7,
+        "name": "Meera Sinha",
+        "profileImage": "assets/images/instructors/meera-sinha.jpg",
+        "designation": "Cloud Solutions Architect",
+        "organization": "Microsoft Azure",
+        "bio": "Meera specializes in designing scalable and secure cloud solutions.",
+        "rating": 4.6,
+        "totalReviews": 860,
+        "totalCourses": 6,
+        "specializations": ["Azure", "Security", "Cloud Architecture"]
+        
+      },
+      {
+        "id": 8,
+        "name": "Carlos Rivera",
+        "profileImage": "assets/images/instructors/carlos-rivera.jpg",
+        "designation": "Game Developer",
+        "organization": "Unity Technologies",
+        "bio": "Carlos is a Unity-certified expert who teaches game development and graphics programming.",
+        "rating": 4.75,
+        "totalReviews": 1045,
+        "totalCourses": 11,
+        "specializations": ["Game Development", "Unity", "Graphics Programming"]
+        
+      },
+      {
+        "id": 9,
+        "name": "Fatima Al-Farsi",
+        "profileImage": "assets/images/instructors/fatima-alfarsi.jpg",
+        "designation": "Cybersecurity Analyst",
+        "organization": "Kaspersky Lab",
+        "bio": "Fatima has been working on digital security solutions and ethical hacking for over 8 years.",
+        "rating": 4.65,
+        "totalReviews": 910,
+        "totalCourses": 5,
+        "specializations": ["Cybersecurity", "Ethical Hacking", "Network Security"]
+        
+      },
+      {
+        "id": 10,
+        "name": "Jason Brooks",
+        "profileImage": "assets/images/instructors/jason-brooks.jpg",
+        "designation": "Mobile App Developer",
+        "organization": "FlutterFlow Inc.",
+        "bio": "Jason is a Flutter & Dart enthusiast who creates modern mobile UIs and cross-platform apps.",
+        "rating": 4.7,
+        "totalReviews": 975,
+        "totalCourses": 8,
+        "specializations": ["Flutter", "Dart", "Mobile Development"]
+        
       }
-    }
+    
 ]

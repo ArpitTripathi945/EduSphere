@@ -14,6 +14,7 @@ import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { InstructorComponent } from './components/instructor/instructor.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     ContactComponent,
     MainLayoutComponent,
     AuthLayoutComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    InstructorComponent
   ],
   imports: [
     BrowserModule,

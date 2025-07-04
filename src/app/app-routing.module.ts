@@ -7,6 +7,7 @@ import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component'
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { InstructorComponent } from './components/instructor/instructor.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'contact', component: FeedbackComponent },
+      { path: 'instructor', component: InstructorComponent },
       {
         path: 'dashboard',
         loadChildren: () =>
