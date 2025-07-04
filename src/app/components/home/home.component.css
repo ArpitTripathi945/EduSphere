@@ -13,12 +13,13 @@
   height: 150px;
   border-radius: 5px;
 }
-
+.card {
+  transition: transform 0.8s ease;
+  flex: 0 0 auto;
+}
 /* 10% custom tweaks only */
 .object-fit-cover {
   object-fit: cover;
 }
-.card {
-  flex: 0 0 auto;
-}
+
 

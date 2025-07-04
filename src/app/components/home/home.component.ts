@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   courses: Course[] = [];
   visibleCourses: Course[] = [];
+  topRatedCourses: Course[] = [];
   visibleCount: number = this.getVisibleCount();
   startIndex: number = 0;
   isTransitioning: boolean = false;
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   slideIntervalId: any;
 
   private track!: HTMLElement;
+  private readonly TRANSITION_DURATION = 600;
 
   constructor(
     private courseService: CourseService,
@@ -62,6 +64,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.courseService.getCourses().subscribe({
       next: (data: Course[]) => {
         this.courses = data;
+
+        this.topRatedCourses = [...data]
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, 5);
+
         this.updateVisibleCourses();
       },
       error: () => {
@@ -92,9 +99,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   updateVisibleCourses(): void {
     this.visibleCourses = [];
     for (let i = 0; i < this.visibleCount; i++) {
-      const index = (this.startIndex + i) % this.courses.length;
-      this.visibleCourses.push(this.courses[index]);
+      const index = (this.startIndex + i) % this.topRatedCourses.length;
+      this.visibleCourses.push(this.topRatedCourses[index]);
     }
+
     this.track.style.transition = "none";
     this.track.style.transform = "translateX(0)";
     this.track.offsetHeight;
@@ -117,7 +125,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.track.style.transition = "none";
       this.track.removeChild(this.track.children[0]);
       this.track.style.transform = "translateX(0)";
-      this.startIndex = (this.startIndex + 1) % this.courses.length;
+      this.startIndex = (this.startIndex + 1) % this.topRatedCourses.length;
       this.isTransitioning = false;
     }, 800);
   }
@@ -126,7 +134,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if (this.isTransitioning) return;
     this.isTransitioning = true;
 
-    this.startIndex = (this.startIndex - 1 + this.courses.length) % this.courses.length;
+    this.startIndex = (this.startIndex - 1 + this.topRatedCourses.length) % this.topRatedCourses.length;
     this.updateVisibleCourses();
 
     const moveBy = this.track.offsetWidth / (this.visibleCount + 1);

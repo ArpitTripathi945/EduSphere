@@ -1,0 +1,94 @@
+[
+    {
+      "id": 1,
+      "name": "Dr. Anjali Mehra",
+      "profileImage": "assets/images/instructors/anjali-mehra.jpg",
+      "designation": "Senior Data Scientist",
+      "organization": "Google AI",
+      "bio": "Anjali has over 10 years of experience in AI and has taught 50,000+ students worldwide.",
+      "rating": 4.8,
+      "totalReviews": 1200,
+      "totalCourses": 12,
+      "specializations": ["Machine Learning", "Deep Learning", "Python"],
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/anjalimehra",
+        "twitter": "https://twitter.com/anjalimehra"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Prof. Rohan Kapoor",
+      "profileImage": "assets/images/instructors/rohan-kapoor.jpg",
+      "designation": "Professor of Computer Science",
+      "organization": "IIT Bombay",
+      "bio": "Rohan has published 30+ papers and specializes in distributed systems and blockchain.",
+      "rating": 4.6,
+      "totalReviews": 870,
+      "totalCourses": 8,
+      "specializations": ["Blockchain", "Distributed Systems", "Java"],
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/rohankapoor"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sara Williams",
+      "profileImage": "assets/images/instructors/sara-williams.jpg",
+      "designation": "Frontend Developer",
+      "organization": "Meta",
+      "bio": "Sara is passionate about UI/UX and has helped design interfaces used by millions.",
+      "rating": 4.9,
+      "totalReviews": 1540,
+      "totalCourses": 10,
+      "specializations": ["Angular", "React", "UI/UX"],
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/sarawilliams",
+        "twitter": "https://twitter.com/saracodes"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Kunal Sharma",
+      "profileImage": "assets/images/instructors/kunal-sharma.jpg",
+      "designation": "DevOps Engineer",
+      "organization": "Amazon Web Services",
+      "bio": "Kunal has trained thousands in Kubernetes, CI/CD pipelines, and AWS architecture.",
+      "rating": 4.7,
+      "totalReviews": 980,
+      "totalCourses": 7,
+      "specializations": ["DevOps", "AWS", "Kubernetes"],
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/kunalsharma"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Emily Zhang",
+      "profileImage": "assets/images/instructors/emily-zhang.jpg",
+      "designation": "Full Stack Engineer",
+      "organization": "Netflix",
+      "bio": "Emily loves building scalable web apps and mentoring new developers.",
+      "rating": 4.85,
+      "totalReviews": 1120,
+      "totalCourses": 9,
+      "specializations": ["Node.js", "MongoDB", "TypeScript"],
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/emilyzhang"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Dr. Naveen Joshi",
+      "profileImage": "assets/images/instructors/naveen-joshi.jpg",
+      "designation": "AI Researcher",
+      "organization": "MIT",
+      "bio": "Naveen is a renowned researcher in neural networks and reinforcement learning.",
+      "rating": 4.95,
+      "totalReviews": 1900,
+      "totalCourses": 15,
+      "specializations": ["AI", "Reinforcement Learning", "Neural Networks"],
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/naveenjoshi"
+      }
+    }
+]
