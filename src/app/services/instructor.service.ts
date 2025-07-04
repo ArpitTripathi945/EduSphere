@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InstructorService {
-
-  private courseUrl = 'assets/instructor.json';
+ 
+  private instructorUrl = 'assets/instructor.json';
   constructor(private http : HttpClient) { }
 
-  getCourses(): Observable<Instructor[]> {
-    return this.http.get<Instructor[]>(this.courseUrl);
+  getInstructor(): Observable<Instructor[]> {
+    return this.http.get<Instructor[]>(this.instructorUrl);
   }
 }

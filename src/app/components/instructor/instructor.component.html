@@ -1,1 +1,38 @@
-<p>instructor works!</p>
+<div class="container py-4"> 
+<h2 class="text-center mt-5 text-primary">Know Your Instructor!</h2>
+<div class="row py-4" *ngIf="instructor.length > 0; else loading">
+    <div class="col-md-4 mb-4" *ngFor="let instructor of instructor">
+      <div class="card h-100 shadow">
+        <img
+          [src]="instructor.profileImage"
+          class="card-img-top"
+          [alt]="instructor.name"
+          style="height: 200px; object-fit: cover"
+        />
+        <div class="card-body">
+          <h4 class="card-title">{{ instructor.name }}</h4>
+          <p class="card-subtitle text-muted">{{ instructor.designation }} at {{ instructor.organization }}</p>
+          <p class="mt-2">{{ instructor.bio }}</p>
+          <p>
+            Rating:<strong> ⭐ {{ instructor.rating }}</strong> ({{ instructor.totalReviews }} reviews)<br />
+            Courses :<strong> {{ instructor.totalCourses }}</strong>
+          </p>
+          <div>
+            Specializations : 
+            <span class="badge bg-primary me-1" *ngFor="let skill of instructor.specializations">
+              {{ skill }}
+            </span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <div class="text-center my-5">
+      <p>Loading instructors...</p>
+    </div>
+  </ng-template>
+</div>
+  

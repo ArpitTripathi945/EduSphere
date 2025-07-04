@@ -2,7 +2,7 @@
     {
       "id": 1,
       "name": "Dr. Anjali Mehra",
-      "profileImage": "assets/images/instructors/anjali-mehra.jpg",
+      "profileImage": "https://t3.ftcdn.net/jpg/06/70/00/42/360_F_670004228_4EFH6zZn8kjVhc5q7FyXuAHn3PtSwpwy.jpg",
       "designation": "Senior Data Scientist",
       "organization": "Google AI",
       "bio": "Anjali has over 10 years of experience in AI and has taught 50,000+ students worldwide.",
@@ -14,7 +14,7 @@
     {
       "id": 2,
       "name": "Prof. Rohan Kapoor",
-      "profileImage": "assets/images/instructors/rohan-kapoor.jpg",
+      "profileImage": "https://img.freepik.com/free-photo/closeup-young-hispanic-man-casuals-studio_662251-600.jpg?semt=ais_hybrid&w=740",
       "designation": "Professor of Computer Science",
       "organization": "IIT Bombay",
       "bio": "Rohan has published 30+ papers and specializes in distributed systems and blockchain.",
@@ -26,7 +26,7 @@
     {
       "id": 3,
       "name": "Sara Williams",
-      "profileImage": "assets/images/instructors/sara-williams.jpg",
+      "profileImage": "https://www.dcmol.com/wp-content/uploads/2019/04/Sara-W-.png",
       "designation": "Frontend Developer",
       "organization": "Meta",
       "bio": "Sara is passionate about UI/UX and has helped design interfaces used by millions.",
@@ -39,7 +39,7 @@
     {
       "id": 4,
       "name": "Kunal Sharma",
-      "profileImage": "assets/images/instructors/kunal-sharma.jpg",
+      "profileImage": "https://media.istockphoto.com/id/1277971635/photo/portrait-of-a-smiling-man-of-indian-ethnicity.jpg?s=612x612&w=0&k=20&c=CnPwvagPlklsAjejUNkuKv_QXtaXPYFQ64AQYb-IAjA=",
       "designation": "DevOps Engineer",
       "organization": "Amazon Web Services",
       "bio": "Kunal has trained thousands in Kubernetes, CI/CD pipelines, and AWS architecture.",
@@ -51,7 +51,7 @@
     {
       "id": 5,
       "name": "Emily Zhang",
-      "profileImage": "assets/images/instructors/emily-zhang.jpg",
+      "profileImage": "https://t4.ftcdn.net/jpg/05/84/65/25/360_F_584652599_s89lyUhPSMfX5YsRlKsa1AglJT7vNioO.jpg",
       "designation": "Full Stack Engineer",
       "organization": "Netflix",
       "bio": "Emily loves building scalable web apps and mentoring new developers.",
@@ -63,7 +63,7 @@
     {
       "id": 6,
       "name": "Dr. Naveen Joshi",
-      "profileImage": "assets/images/instructors/naveen-joshi.jpg",
+      "profileImage": "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?semt=ais_hybrid&w=740",
       "designation": "AI Researcher",
       "organization": "MIT",
       "bio": "Naveen is a renowned researcher in neural networks and reinforcement learning.",
@@ -75,7 +75,7 @@
     {
         "id": 7,
         "name": "Meera Sinha",
-        "profileImage": "assets/images/instructors/meera-sinha.jpg",
+        "profileImage": "https://t3.ftcdn.net/jpg/00/65/63/04/360_F_65630480_NfoFUSat5KOy8ufEaNJHdaAeOriXHLCU.jpg",
         "designation": "Cloud Solutions Architect",
         "organization": "Microsoft Azure",
         "bio": "Meera specializes in designing scalable and secure cloud solutions.",
@@ -88,7 +88,7 @@
       {
         "id": 8,
         "name": "Carlos Rivera",
-        "profileImage": "assets/images/instructors/carlos-rivera.jpg",
+        "profileImage": "https://www.shutterstock.com/image-photo/handsome-30s-top-manager-portrait-600nw-2448610227.jpg",
         "designation": "Game Developer",
         "organization": "Unity Technologies",
         "bio": "Carlos is a Unity-certified expert who teaches game development and graphics programming.",
@@ -100,11 +100,11 @@
       },
       {
         "id": 9,
-        "name": "Fatima Al-Farsi",
-        "profileImage": "assets/images/instructors/fatima-alfarsi.jpg",
+        "name": "Mary Jane",
+        "profileImage": "https://t4.ftcdn.net/jpg/06/48/50/43/360_F_648504345_sZENzfN8fq9rGSYps8dGBtYfEnOOLcpq.jpg",
         "designation": "Cybersecurity Analyst",
         "organization": "Kaspersky Lab",
-        "bio": "Fatima has been working on digital security solutions and ethical hacking for over 8 years.",
+        "bio": "Mary has been working on digital security solutions and ethical hacking for over 8 years.",
         "rating": 4.65,
         "totalReviews": 910,
         "totalCourses": 5,
@@ -114,7 +114,7 @@
       {
         "id": 10,
         "name": "Jason Brooks",
-        "profileImage": "assets/images/instructors/jason-brooks.jpg",
+        "profileImage": "https://img.freepik.com/free-photo/portrait-man-looking-front-him_23-2148422271.jpg?semt=ais_hybrid&w=740",
         "designation": "Mobile App Developer",
         "organization": "FlutterFlow Inc.",
         "bio": "Jason is a Flutter & Dart enthusiast who creates modern mobile UIs and cross-platform apps.",

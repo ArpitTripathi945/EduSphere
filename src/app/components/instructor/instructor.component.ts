@@ -9,12 +9,24 @@ import { InstructorService } from 'src/app/services/instructor.service';
   styleUrls: ['./instructor.component.css']
 })
 export class InstructorComponent {
-  instructor: Instructor | undefined;
+  instructor: Instructor[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private instructorService: InstructorService
   ) {}
 
+  ngOnInit(): void {
+    this.instructorService.getInstructor().subscribe(
+      (data) => {
+        this.instructor = data;
+      },
+      (error) => {
+        console.error('Error fetching instructors', error);
+      }
+    );
+  }
+
+ 
   
 }
