@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Instructor } from "src/app/models/instructor";
+import { InstructorService } from 'src/app/services/instructor.service';
 
 @Component({
   selector: 'app-instructor',
@@ -7,5 +9,12 @@ import { Instructor } from "src/app/models/instructor";
   styleUrls: ['./instructor.component.css']
 })
 export class InstructorComponent {
+  instructor: Instructor | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private instructorService: InstructorService
+  ) {}
+
   
 }
