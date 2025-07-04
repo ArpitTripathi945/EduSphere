@@ -88,59 +88,53 @@
   </div>
 </section>
 
-  <div class="container my-5">
-    <h2 class="mb-5 fw-bold text-primary text-center">Top Rated Courses</h2>
-    <div class="position-relative">
-      <button
-        class="btn btn-dark position-absolute top-50 start-0 translate-middle-y z-3"
-        (click)="prevSlide()"
-      >
-        &larr;
-      </button>
-      <button
-        class="btn btn-dark position-absolute top-50 end-0 translate-middle-y z-3"
-        (click)="nextSlide()"
-      >
-        &rarr;
-      </button>
+<div class="container my-5 position-relative">
+  <h2 class="mb-5 fw-bold text-primary text-center">Top Rated Courses</h2>
 
-      <div class="overflow-hidden w-10" *ngIf="topRatedCourses.length">
-        <div class="d-flex justify-content-center flex-nowrap transition-track" #track>
+  <!-- Navigation Buttons -->
+  <button class="btn btn-dark nav-btn prev-btn" (click)="prevSlide()">←</button>
+  <button class="btn btn-dark nav-btn next-btn" (click)="nextSlide()">→</button>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-4" *ngFor="let course of visibleCourses">
+      <div class="card course-card">
+        <img
+          [src]="course.thumbnail"
+          class="card-img-top"
+          [alt]="course.title"
+        />
+        <div class="card-body">
           <div
-            class="card mx-2 shadow"
-            style="min-width: 400px; max-width: 420px"
-            *ngFor="let course of topRatedCourses"
+            class="d-flex flex-row justify-content-between align-items-center mb-2"
           >
-            <div class="ratio ratio-16x9">
-              <img
-                [src]="course.thumbnail"
-                class="img-fluid rounded object-fit-cover"
-                [alt]="course.title"
-              />
-            </div>
-            <div class="card-body">
-              <div class="d-flex flex-row justify-content-between align-items-center mb-2">
-                <h5>{{ course.title }}</h5>
-                <h6 class="card-text"><strong> ⭐ {{ course.rating }}</strong></h6>
-              </div>
-              <div class="d-flex flex-column">
-                <h6>Instructor: <strong>{{ course.instructor }}</strong></h6>
-                <h6>Starting at ₹<strong>{{ course.price }}</strong>/month</h6>
-              </div>
-            </div>
-
+            <h5>{{ course.title }}</h5>
+            <h6 class="card-text">
+              <strong> ⭐ {{ course.rating }}</strong>
+            </h6>
+          </div>
+          <div class="d-flex flex-column">
+            <h6>
+              Instructor: <strong>{{ course.instructor }}</strong>
+            </h6>
+            <h6>
+              Starting at ₹<strong>{{ course.price }}</strong
+              >/month
+            </h6>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+</div>
 
 <div id="testimonial-section" class="container mt-5 mb-5">
   <h2 class="mb-5 fw-bold text-primary text-center">What Our Students Say</h2>
   <div class="testimonial-slider bg-white p-4 rounded shadow text-center">
-    <p id="testimonial-text" class="mb-2">{{ testimonials[currentTestimonial].text }}</p>
-    <h6 id="testimonial-author">{{ testimonials[currentTestimonial].author }}</h6>
+    <p id="testimonial-text" class="mb-2">
+      {{ testimonials[currentTestimonial].text }}
+    </p>
+    <h6 id="testimonial-author">
+      {{ testimonials[currentTestimonial].author }}
+    </h6>
   </div>
 </div>
-
