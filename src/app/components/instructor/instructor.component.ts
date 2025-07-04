@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Instructor } from "src/app/models/instructor";
 import { InstructorService } from 'src/app/services/instructor.service';
 
@@ -12,7 +11,6 @@ export class InstructorComponent {
   instructor: Instructor[] = [];
 
   constructor(
-    private route: ActivatedRoute,
     private instructorService: InstructorService
   ) {}
 
