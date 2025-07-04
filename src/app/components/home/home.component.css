@@ -7,19 +7,63 @@
     url("./../../../assets/hero.jpg") center/cover no-repeat;
 }
 
-
 .vertical-line {
   width: 8px;
   height: 150px;
   border-radius: 5px;
 }
+
+
+.course-card {
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+}
+
+.prev-btn {
+  left: -10px;
+}
+
+.next-btn {
+  right: -10px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .card {
-  transition: transform 0.8s ease;
   flex: 0 0 auto;
 }
-/* 10% custom tweaks only */
+
 .object-fit-cover {
   object-fit: cover;
 }
 
+.slider-wrapper {
+  overflow: hidden;
+  position: relative;
+}
 
+.transition-track {
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+}
