@@ -4,7 +4,6 @@ import { CourseService } from '../services/course.service';
 import { of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Instructor } from "src/app/models/instructor";
 import { InstructorService } from 'src/app/services/instructor.service';
@@ -8,7 +8,7 @@ import { InstructorService } from 'src/app/services/instructor.service';
   templateUrl: './instructor.component.html',
   styleUrls: ['./instructor.component.css']
 })
-export class InstructorComponent {
+export class InstructorComponent implements OnInit {
   instructor: Instructor[] = [];
 
   constructor(

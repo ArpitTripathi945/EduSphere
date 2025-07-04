@@ -22,20 +22,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
   courses: Course[] = [];
   visibleCourses: Course[] = [];
   topRatedCourses: Course[] = [];
-  visibleCount: number = 1; 
+  visibleCount = 1;
   currentIndex = 0;
-  isTransitioning: boolean = false;
-  autoSlideInterval: any;
-  isHovered: boolean = false;
+  isTransitioning = false;
+  autoSlideInterval!: number; 
+  isHovered = false;
 
   testimonials: Testimonial[] = [];
-  currentTestimonial: number = 0;
-  testimonialIntervalId: any;
-  slideIntervalId: any;
+  currentTestimonial = 0;
+  testimonialIntervalId!: number; 
+  slideIntervalId!: number; 
 
-  startIndex: number = 0;
-  currentSlide: number = 0;
-  slideWidth: number = 360;
+  startIndex = 0;
+  currentSlide = 0;
+  slideWidth = 360;
 
   private track!: HTMLElement;
 
@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.visibleCount = this.getVisibleCount(); 
+    this.visibleCount = this.getVisibleCount();
     this.loadCourses();
     this.loadTestimonials();
     this.setupAutoSlide();
@@ -131,7 +131,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.topRatedCourses.length;
     this.updateVisibleCourses();
   }
-
-
-
 }

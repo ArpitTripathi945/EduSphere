@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Course } from "src/app/models/course";
 import { CourseService } from "src/app/services/course.service";
@@ -9,7 +9,7 @@ import { CourseService } from "src/app/services/course.service";
   styleUrls: ["./course-detail.component.css"],
   
 })
-export class CourseDetailComponent {
+export class CourseDetailComponent implements OnInit {
   course: Course | undefined;
 
   constructor(

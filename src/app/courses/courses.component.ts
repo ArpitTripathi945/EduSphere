@@ -11,8 +11,8 @@ export class CoursesComponent implements OnInit{
   courses: Course[] = [];
   filteredCourses: Course[] = [];
   categories: string[] = [];
-  selectedCategory: string = "All";
-  searchText: string = "";
+  selectedCategory = "All";
+  searchText = "";
   selectedCourse: Course | null = null;
 
   @ViewChild("previewVideo") previewVideo!: ElementRef<HTMLVideoElement>;
